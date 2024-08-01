@@ -1,0 +1,20 @@
+```mermaid
+sequenceDiagram
+  participant User
+  participant Browser
+  participant Server
+
+  User->>Browser: Open /spa URL 
+  Browser->>Server: GET /spa
+  Server-->>Browser: HTML document
+
+  Browser->>Server: GET /main.css
+  Server-->>Browser: CSS file
+
+  Browser->>Server: GET /spa.js
+  Server-->>Browser: Javascript file
+
+  Browser->>Server: GET /data.json
+  Server-->>Browser: JSON data with existing notes
+
+  Browser-->>User: Render App with notes
